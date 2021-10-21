@@ -1,0 +1,9 @@
+.title{
+    font-size: 1.6rem;
+    padding: 1.2rem 3rem;
+    text-transform: capitalize;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    font-weight: 200;
+}
