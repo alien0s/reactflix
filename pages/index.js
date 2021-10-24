@@ -94,7 +94,7 @@ export default function Home({trendingProps,actionProps,comedyProps}) {
   )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
   const [trendingRes, actionRes, comedyRes] = await Promise.all([
     fetch('http://localhost:3000/api/trending'),
     fetch('http://localhost:3000/api/action'),
