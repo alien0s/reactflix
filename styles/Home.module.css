@@ -3,14 +3,6 @@
   width: 100%;
   margin-top: -20%;
 }
-.shadow{
-  content: '';
-	width: 100%;
-	height: 60%;
-  background-image: linear-gradient(transparent,var(--background-color) 100%);
-	position: absolute;
-	bottom: 0;
-}
 .box_text{
   position: absolute;
   margin-left: 3rem;
@@ -20,6 +12,7 @@
   display: flex;
   align-items: center;
   color: #fff;
+  z-index: 1;
 }
 .box_row_flex{
   display: flex;
@@ -42,4 +35,14 @@
   .box_text p{
     display: none;
   }
+}
+.box_backdrop{
+  width: 100%;
+  position: relative;
+  height: fit-content;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }

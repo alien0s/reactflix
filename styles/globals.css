@@ -21,14 +21,13 @@ menu{
     z-index: 100;
     transition: 0.9s;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 .menuOpacityColor{
     background-color: transparent;
 }
 .menuColor{
-    background-color: rgb(22, 22, 22);
+    background-color: #161616;
 }
 #wrapper_cards .swiper-slide{
     border-radius: 2px;
@@ -69,4 +68,41 @@ menu{
 .buttom:hover{
     background-color: rgb(34, 34, 34);
     color: #fff;
+}
+.list_search_close{
+    transform: translateX(100%);
+}
+.list_search_open{
+    transform: translateX(0);
+}
+.shadow{
+    content: '';
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(transparent,var(--background-color) 100%);
+    position: absolute;
+    bottom: 0;
+}
+footer{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 3rem;
+    background-color: #161616;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box_logo_footer{
+    width: 14%;
+}
+.box_logo_footer svg{
+    width: 100%;
+}
+.description{
+    font-size: 1rem;
+    color: #fff;
+}
+.description a{
+    color: #fff;
+    font-weight: 600;
 }

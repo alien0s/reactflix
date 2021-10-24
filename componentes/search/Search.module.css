@@ -1,0 +1,89 @@
+#list_search{
+    position: absolute;
+    width: 99vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--background-color);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button_box{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.svg{
+    width: 25px;
+    height: 25px;
+    fill: white;
+}
+.svg, .icon_close{
+    cursor: pointer;
+}
+.icon_close{
+    fill: #fff;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 5%;
+    top: 6%;
+}
+.icon_close:hover{
+    fill: red;
+}
+.box_input{
+    width: 50%;
+    margin-bottom: 1rem;
+    align-items: center;
+    display: flex;
+}
+.input{
+    width: 50%;
+    font-family: 'Questrial', sans-serif;
+    position: absolute;
+    background-color: transparent;
+    color: #fff;
+    text-transform: capitalize;
+    border: 0;
+    border-bottom: 3px solid #fff;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+.input::placeholder{
+    color: rgb(168, 168, 168);
+}
+.input:focus{
+    border-bottom: 3px solid red;
+}
+#icon_search{
+    position: relative;
+    display: flex;
+}
+.span_icon{
+    position: absolute;
+    right: 26.5%;
+}
+.container_swiper{
+    width: 100%;
+    margin-top: 6%;
+}
+.box_wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.box_info_movie{
+    color: #fff;
+    margin-top: 1rem;
+    margin-left: 0.8rem;
+}
+.title_h5{
+    font-size: medium;
+}

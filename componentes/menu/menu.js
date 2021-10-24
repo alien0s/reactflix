@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import {useEffect} from 'react';
-import Logo from '../../public/reactflix.svg'
+import Search from '../search/search';
 import styles from './Menu.module.css'
 
 export default function Menu(){
@@ -20,7 +20,6 @@ export default function Menu(){
         window.addEventListener('scroll', changeMenuColor)
         return () => window.removeEventListener('scroll', changeMenuColor)
     })
-    
 
     return (
         <menu className={menuColor ? "menuColor":"menuOpacityColor"}>
@@ -33,7 +32,10 @@ export default function Menu(){
                         </a>
                     </Link>
             </div>
-            <img className={styles.icon} src="https://64.media.tumblr.com/ebaf34fe31ba5feaf8316df5a65aa07b/72000c6030712841-e7/s400x600/4403d5bf9f67399659bf990b255703d85a96f5cb.jpg"/>
+            <div className={styles.box_right}>
+                <Search/>
+                <img className={styles.icon} src="https://64.media.tumblr.com/ebaf34fe31ba5feaf8316df5a65aa07b/72000c6030712841-e7/s400x600/4403d5bf9f67399659bf990b255703d85a96f5cb.jpg"/>
+            </div>
         </menu>
     )
 }
