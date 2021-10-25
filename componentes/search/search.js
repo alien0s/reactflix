@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import search from '../../pages/api/search'
 import optionsCover from '../../lib/optionsCover'
 import SwiperCore, { Navigation, Mousewheel } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,7 +18,7 @@ export default function Search(){
     }
     const handleSearch = async () => {
         if(text !== ""){
-            const results = await fetch(`http://localhost:3000/api/search?query=${text}`)
+            const results = await fetch(`https://reactflix-alien0s.vercel.app/api/search?query=${text}`)
             const json = await results.json()
             setList(json.list)
         }

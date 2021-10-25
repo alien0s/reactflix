@@ -58,8 +58,8 @@ export default function Filme ({info,similarProps}) {
 
 export async function getServerSideProps(context){
     const [filmeRes, similarRes] = await Promise.all([
-        fetch(`http://localhost:3000/api/movie/${context.params.id}`),
-        fetch(`http://localhost:3000/api/similar/${context.params.id}`)
+        fetch(`https://reactflix-alien0s.vercel.app/api/movie/${context.params.id}`),
+        fetch(`https://reactflix-alien0s.vercel.app/api/similar/${context.params.id}`)
     ]);
     
     const [filme,similar] = await Promise.all([

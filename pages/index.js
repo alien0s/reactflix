@@ -96,9 +96,9 @@ export default function Home({trendingProps,actionProps,comedyProps}) {
 
 export async function getServerSideProps(){
   const [trendingRes, actionRes, comedyRes] = await Promise.all([
-    fetch('http://localhost:3000/api/trending'),
-    fetch('http://localhost:3000/api/action'),
-    fetch('http://localhost:3000/api/comedy')
+    fetch('https://reactflix-alien0s.vercel.app/api/trending'),
+    fetch('https://reactflix-alien0s.vercel.app/api/action'),
+    fetch('https://reactflix-alien0s.vercel.app/api/comedy')
   ]);
 
   const [trending,action,comedy] = await Promise.all([
