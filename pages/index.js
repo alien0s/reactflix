@@ -9,8 +9,8 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css"
 SwiperCore.use([Parallax,Pagination,Mousewheel,Navigation])
 import { Fragment } from 'react';
-import optionsCover from '../lib/optionsCover'
 import Footer from '../componentes/footer/footer'
+import Slide from '../componentes/slide/slide'
 
 export default function Home({trendingProps,actionProps,comedyProps}) {
   return (
@@ -27,17 +27,21 @@ export default function Home({trendingProps,actionProps,comedyProps}) {
     <Swiper speed={600} parallax={true} pagination={{
       "clickable": true}} navigation={true} className="mySwiper">
       <SwiperSlide>
-        <img className={styles.swiper_img} src="https://www.themoviedb.org/t/p/original/6S159wVNvQfwoQh5yBxWKCsI1YL.jpg"/>
-        <div className={styles.box_text}>
-          <div className={styles.box_row_flex}>
-            <h1 data-swiper-parallax="-900">O dilema das redes</h1>
-            <p data-swiper-parallax="-700">Especialistas em tecnologia e profissionais da área fazem um alerta: as redes sociais podem ter um impacto devastador sobre a democracia e a humanidade.</p>
-            <Link href="#">
-              <a className="buttom">info</a>
-            </Link>
+        <div className={styles.backdrop_skeleton}>
+          <div className={styles.backdrop_skeleton_absolute}>
+            <img className={styles.swiper_img} src="https://www.themoviedb.org/t/p/original/6S159wVNvQfwoQh5yBxWKCsI1YL.jpg"/>
+            <div className={styles.box_text}>
+              <div className={styles.box_row_flex}>
+                <h1 data-swiper-parallax="-900">O dilema das redes</h1>
+                <p data-swiper-parallax="-700">Especialistas em tecnologia e profissionais da área fazem um alerta: as redes sociais podem ter um impacto devastador sobre a democracia e a humanidade.</p>
+                <Link href="#">
+                  <a className="buttom">info</a>
+                </Link>
+              </div>
+            </div>
+            <div className="shadow"></div>
           </div>
         </div>
-        <div className="shadow"></div>
       </SwiperSlide>
       <SwiperSlide>
         <img className={styles.swiper_img} src="https://www.themoviedb.org/t/p/original/ktZaQ4FEmKpRgetiBooZETYQbmQ.jpg"/>
@@ -45,6 +49,9 @@ export default function Home({trendingProps,actionProps,comedyProps}) {
           <div className={styles.box_row_flex}>
             <h1 data-swiper-parallax="-900">O gambito da rainha</h1>
             <p data-swiper-parallax="-700">Durante a Guerra Fria, em um orfanato do Kentucky, uma garota prodígio do xadrez luta contra o vício para se tornar a número um do mundo.</p>
+            <Link href="#">
+              <a className="buttom">info</a>
+            </Link>
           </div>
         </div>
         <div className="shadow"></div>
@@ -52,42 +59,11 @@ export default function Home({trendingProps,actionProps,comedyProps}) {
     </Swiper>
       <div className={styles.container_cards} id="wrapper_cards">
         <Title title="trending"/>
-        <Swiper className="mySwiper" {...optionsCover}>
-          {trendingProps.map((index,i) => 
-            <SwiperSlide key={i}>
-              <Link href={`/filme/${index.id}`}>
-                <a>
-                  <div className="skeleton">
-                    <div className="skeleton-absolute">
-                      <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/`+index.poster_path} title={index.title || index.name} />
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            </SwiperSlide>)}
-        </Swiper>
+        <Slide array={trendingProps}/>
         <Title title="ação"/>
-        <Swiper className="mySwiper" {...optionsCover}>
-          {actionProps.map((index,i) => 
-            <SwiperSlide key={i}>
-              <div className="skeleton">
-                <div className="skeleton-absolute">
-                  <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/`+index.poster_path} title={index.title || index.name} />
-                </div>
-              </div>
-            </SwiperSlide>)}
-        </Swiper>
+        <Slide array={actionProps}/>
         <Title title="comédia"/>
-        <Swiper className="mySwiper" {...optionsCover}>
-          {comedyProps.map((index,i) => 
-            <SwiperSlide key={i}>
-              <div className="skeleton">
-                <div className="skeleton-absolute">
-                  <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/`+index.poster_path} title={index.title || index.name} />
-                </div>
-              </div>
-            </SwiperSlide>)}
-        </Swiper>
+        <Slide array={comedyProps}/>
       </div>
       <Footer></Footer>
     </Fragment>
