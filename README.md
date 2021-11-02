@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5fd70e129987193.6176dc3c2f160.gif" width="100%" />
+![alt text](https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5fd70e129987193.6176dc3c2f160.gif)
 
 First, run the development server:
 
